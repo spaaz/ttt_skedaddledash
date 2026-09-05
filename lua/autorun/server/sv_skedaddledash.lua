@@ -43,7 +43,7 @@ sound.Add({
     sound = SOUND_BUY
 })
 
-
+CreateConVar("ttt_skedaddledash_buy_sound", 1, FCVAR_ARCHIVE, "If a sound plays when you buy the Skedaddledash", 0, 1)
 
 -- Grant passive state on buy
 hook.Add("TTTOrderedEquipment", "SkedaddledashOnBuy", function(ply, equipID, isItem)

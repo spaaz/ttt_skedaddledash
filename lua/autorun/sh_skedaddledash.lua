@@ -5,7 +5,6 @@ if SERVER then
 end
 
 CreateConVar("ttt_skedaddledash_cooldown", "90", bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "Cooldown duration in seconds for Skedaddledash ability.", 10, 300)
-CreateConVar("ttt_skedaddledash_buy_sound", 1, FCVAR_ARCHIVE, "If a sound plays when you buy the Skedaddledash", 0, 1)
 CreateConVar("ttt_skedaddledash_traitor", 1, bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "If traitors can buy the skedaddledash", 0, 1)
 CreateConVar("ttt_skedaddledash_detective", 1, bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "If detectives can buy the skedaddledash", 0, 1)
 
