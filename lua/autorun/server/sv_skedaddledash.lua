@@ -43,10 +43,7 @@ sound.Add({
     sound = SOUND_BUY
 })
 
-local cv_cooldown = CreateConVar("ttt_skedaddledash_cooldown", "90", bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "Cooldown duration in seconds for Skedaddledash ability.", 10, 300)
-CreateConVar("ttt_skedaddledash_buy_sound", 1, FCVAR_ARCHIVE, "If a sound plays when you buy the Skedaddledash", 0, 1)
-CreateConVar("ttt_skedaddledash_traitor", 1, bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "If traitors can buy the skedaddledash", 0, 1)
-CreateConVar("ttt_skedaddledash_detective", 1, bit.bor(FCVAR_REPLICATED, FCVAR_ARCHIVE), "If detectives can buy the skedaddledash", 0, 1)
+
 
 -- Grant passive state on buy
 hook.Add("TTTOrderedEquipment", "SkedaddledashOnBuy", function(ply, equipID, isItem)
@@ -986,7 +983,7 @@ net.Receive("SkedaddledashStartCast", function(len, ply)
         return
     end
 
-    local cooldown = cv_cooldown:GetFloat()
+    local cooldown = GetConVar("ttt_skedaddledash_cooldown"):GetFloat()
     ply:SetNWFloat("SkedaddledashNextUse", CurTime() + cooldown)
 
     local curPos = ply:GetPos()
