@@ -337,7 +337,7 @@ hook.Add("CalcView", "SkedaddledashCastCamera", function(ply, pos, angles, fov)
 
         view.origin = trace.HitPos + trace.HitNormal * 4
         view.angles = viewAngles
-        --view.fov = fov + (18 * elapsed)
+        view.fov = fov + (18 * elapsed)
         view.drawviewer = true
         return view
     elseif ply:GetNWBool("SkedaddledashIsLanding", false) then
@@ -354,7 +354,7 @@ hook.Add("CalcView", "SkedaddledashCastCamera", function(ply, pos, angles, fov)
         local fovProgress = math.Clamp(elapsed / 0.75, 0, 1)
         view.origin = trace.HitPos + trace.HitNormal * 4
         view.angles = fixedLandingAngles
-        --view.fov = fov + (18 * (1 - fovProgress))
+        view.fov = fov + (18 * (1 - fovProgress))
         view.drawviewer = true
         return view
     end
